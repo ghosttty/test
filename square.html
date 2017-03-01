@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    .rect-wrap {
+        position: relative;
+        perspective: 1600px;
+        width: 1000px;
+        margin: 100px auto;
+    }
+    .container {
+        width: 800px;
+        height: 800px;
+        transform-style: preserve-3d;
+        transform-origin: 50% 50% 200px;
+    }
+    .slide {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+
+
+    }
+    .top {
+        left: 200px;
+        top: -200px;
+        transform: rotateX(-90deg);
+        transform-origin: bottom;
+    }
+    .bottom {
+        left: 200px;
+        bottom: -200px;
+        transform: rotateX(90deg);
+        transform-origin: top;
+    }
+    .left {
+        left: -200px;
+        top: 200px;
+        transform: rotateY(90deg);
+        transform-origin: right;
+    }
+    .right {
+        left: 600px;
+        top: 200px;
+        transform: rotateY(-90deg);
+        transform-origin: left;
+    }
+    .front {
+        left: 200px;
+        top: 200px;
+        transform: translateZ(400px);
+    }
+    .back {
+        left: 200px;
+        top: 200px;
+        transform: translateZ(0);
+    }
+    @keyframes rotate-frame {
+        0% {
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+        10% {
+            transform: rotateX(0deg) rotateY(180deg);
+        }
+        20% {
+            transform: rotateX(-180deg) rotateY(180deg);
+        }
+        30% {
+            transform: rotateX(-360deg) rotateY(180deg);
+        }
+        40% {
+            transform: rotateX(-360deg) rotateY(360deg);
+        }
+        50% {
+            transform: rotateX(-180deg) rotateY(360deg);
+        }
+        60% {
+            transform: rotateX(90deg) rotateY(180deg);
+        }
+        70% {
+            transform: rotateX(0deg) rotateY(180deg);
+        }
+        80% {
+            transform: rotateX(90deg) rotateY(90deg);
+        }
+        90% {
+            transform: rotateX(90deg) rotateY(0deg);
+        }
+        100% {
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+    }
+    .container{
+        animation: rotate-frame 30s linear infinite;
+    }
+</style>
+<body>
+<div class="rect-wrap">
+    <div class="container">
+        <div class="top slide"><img src="images/xbx1.gif" width="100%" height="100%" alt=""/></div>
+        <div class="bottom slide"><img src="images/xbx5.jpg" width="100%" height="100%" alt=""/></div>
+        <div class="left slide"><img src="images/xbx3.gif" width="100%" height="100%" alt=""/></div>
+        <div class="right slide"><img src="images/xbx4.jpg" width="100%" height="100%" alt=""/></div>
+        <div class="front slide"><img src="images/xbx2.gif" width="100%" height="100%" alt=""/></div>
+        <div class="back slide"><img src="images/xbx6.gif" width="100%" height="100%" alt=""/></div>
+    </div>
+</div>
+</body>
+</html>
